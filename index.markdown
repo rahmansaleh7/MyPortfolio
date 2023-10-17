@@ -8,7 +8,7 @@ description: Developer blog. Get contact info, browse personal projects.
 
 <head>
   <meta name="author" content="Iqbal A Saleh">
-  <meta name="keywords" content="Iqbal A Saleh, developer, blog">
+  <meta name="keywords" content="Iqbal A Saleh, developer, blogg">
 </head>
 
 <div style="font-size: 1rem;">
