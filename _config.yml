@@ -1,46 +1,16 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# The Site Configuration
 
-title: iqbalasaleh
-
-tagline: Fokus, Keep Learning, and Share   # it will display as the sub-title
-
-email: rahman.saleh7@gmail.com
-description: >- # this means to ignore newlines until "baseurl:" used by seo meta and the atom feed
-  Developer blog
-# Write an awesome description for your new site here. You can edit this
-# line in _config.yml. It will appear in your document head meta (for
-# Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-
-# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://iqbalasaleh.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: iqbalasaleh
-github_username:  rahmansaleh7
-# Build settings
+# Import the theme
 theme: jekyll-theme-chirpy
+
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: ''
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: ina
+lang: en
 
 # Additional parameters for datetime localization, optional. › https://github.com/iamkun/dayjs/tree/dev/src/locale
 prefer_datetime_locale:
@@ -48,22 +18,39 @@ prefer_datetime_locale:
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone:
 
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: Antonio Pelusi                          # the main title
+
+tagline: ツ   # it will display as the sub-title
+
+description: >-                        # used by seo meta and the atom feed
+  Developer blog
+
+# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
+url: 'https://antoniopelusi.com'
 plugins:
   - jekyll-sitemap
-  # - jekyll-feed
+
+github:
+  username: antoniopelusi             # change to your github username
+
+twitter:
+  username: antopelusi            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Iqbal A Saleh
-  email: rahman.saleh7@gmail.com             # change to your email address
+  name: Antonio Pelusi
+  email: antoniopelusi2000@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/iqbalasaleh     # change to your twitter homepage
-    - https://github.com/rahmansaleh7       # change to your github homepage
+    - https://twitter.com/antopelusi      # change to your twitter homepage
+    - https://github.com/antoniopelusi       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/antoniopelusi/
+    - https://www.linkedin.com/in/antoniopelusi/
 
 google_site_verification:               # fill in to your verification string
 
@@ -71,7 +58,7 @@ google_site_verification:               # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  #id: 'G-4107HZC71G'                # fill in your Google Analytics ID
+  id: #'G-4107HZC71G'                # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
@@ -215,22 +202,3 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

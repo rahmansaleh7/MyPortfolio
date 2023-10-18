@@ -1,27 +1,28 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
 description: Developer blog. Get contact info, browse personal projects.
 ---
 
 <head>
-  <meta name="author" content="Iqbal A Saleh">
-  <meta name="keywords" content="Iqbal A Saleh, developer, blogg">
+  <meta name="author" content="Antonio Pelusi">
+  <meta name="keywords" content="Antonio, Pelusi, developer, blog">
 </head>
 
 <div style="font-size: 1rem;">
 
-    <h2>   👋 Hi, I am Iqbal A Saleh</h2>
+    <h2>   👋 Hi, I am Antonio Pelusi</h2>
 
-    <p>   🎓  I am a graduate of Bachelor of Information Engineering at <a href="http://new.unla.ac.id">Langlangbuana University</a> (S.Kom)</p>
+    <p>   🎓  I am a Computer Science graduate at <a href="https://www.unimore.it/">Unimore</a>, Modena (IT)</p>
 
-    <p>   💻  Now I work as a Fullstack Odoo Developer in a private company</p>
+    <p>   🌱  Currently enrolled in the Bachelor's Degree course in Computer Science at <a href="https://www.unimore.it/">Unimore</a>, Modena (IT)</p>
 
-    <p>   👾  Browse my projects <a href="https://www.iqbalasaleh.com/archives/">here</a>!</p>
+    <p>   🕹️  Videogames enthusiast</p>
+
+    <p>   🎸  Guitar player</p>
+
+    <p>   👾  Browse my projects <a href="https://www.antoniopelusi.com/archives/">here</a>!</p>
         
-    <p>   🔎  Find more about me <a href="https://www.iqbalasaleh.com/about/">here</a>!</p>
+    <p>   🔎  Find more about me <a href="https://www.antoniopelusi.com/about/">here</a>!</p>
 
 </div>
       
@@ -151,5 +152,4 @@ description: Developer blog. Get contact info, browse personal projects.
         </g>
     </g>
 </svg>
-
 
