@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html lang="en" data-mode="dark">
   <!-- The Head -->
 
 <head>
@@ -41,19 +41,19 @@
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <link rel="canonical" href="http://localhost:4000/categories/" />
 <meta property="og:url" content="http://localhost:4000/categories/" />
-<meta property="og:site_name" content="Chirpy" />
+<meta property="og:site_name" content="IqbalASaleh" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-19T13:01:04+07:00" />
+<meta property="article:published_time" content="2023-10-19T14:55:58+07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Categories" />
-<meta name="twitter:site" content="@twitter_username" />
+<meta name="twitter:site" content="@iqbalasaleh" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-19T13:01:04+07:00","datePublished":"2023-10-19T13:01:04+07:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-19T14:55:58+07:00","datePublished":"2023-10-19T14:55:58+07:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Categories | Chirpy
+  <title>Categories | IqbalASaleh
   </title>
 
   <!--
@@ -68,8 +68,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Chirpy">
-<meta name="application-name" content="Chirpy">
+<meta name="apple-mobile-web-app-title" content="IqbalASaleh">
+<meta name="application-name" content="IqbalASaleh">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -113,151 +113,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -271,12 +126,15 @@
   <header class="profile-wrapper">
     <a href="/" id="avatar" class="rounded-circle">
       
+        
+        <img src="/assets/img/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
     </a>
 
     <h1 class="site-title">
-      <a href="/">Chirpy</a>
+      <a href="/">IqbalASaleh</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">A text-focused Jekyll theme</p>
+    <p class="site-subtitle fst-italic mb-0">Fokus, Keep Learning, and Share</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -291,6 +149,26 @@
       </li>
       <!-- the real tabs -->
       
+        <li class="nav-item">
+          <a href="/archives/" class="nav-link">
+            <i class="fa-fw fas fa-archive"></i>
+            
+
+            <span>PROJECTS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/tags/" class="nav-link">
+            <i class="fa-fw fas fa-tag"></i>
+            
+
+            <span>TAGS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
         <li class="nav-item active">
           <a href="/categories/" class="nav-link">
             <i class="fa-fw fas fa-stream"></i>
@@ -302,31 +180,11 @@
         <!-- .nav-item -->
       
         <li class="nav-item">
-          <a href="/tags/" class="nav-link">
-            <i class="fa-fw fas fa-tags"></i>
-            
-
-            <span>TAGS</span>
-          </a>
-        </li>
-        <!-- .nav-item -->
-      
-        <li class="nav-item">
-          <a href="/archives/" class="nav-link">
-            <i class="fa-fw fas fa-archive"></i>
-            
-
-            <span>ARCHIVES</span>
-          </a>
-        </li>
-        <!-- .nav-item -->
-      
-        <li class="nav-item">
           <a href="/about/" class="nav-link">
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>ABOUT</span>
+            <span>ABOUT ME</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -336,33 +194,20 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
-    
 
     
       
 
       
         <a
-          href="https://github.com/github_username"
+          href="https://github.com/rahmansaleh7"
           aria-label="github"
           
 
           
-            target="_blank"
-            
-          
 
           
 
-          
-            rel="noopener noreferrer"
           
         >
           <i class="fab fa-github"></i>
@@ -373,7 +218,7 @@
 
       
         <a
-          href="https://twitter.com/twitter_username"
+          href="https://twitter.com/iqbalasaleh"
           aria-label="twitter"
           
 
@@ -407,24 +252,6 @@
           
         >
           <i class="fas fa-envelope"></i>
-        </a>
-      
-    
-      
-
-      
-        <a
-          href="/feed.xml"
-          aria-label="rss"
-          
-
-          
-
-          
-
-          
-        >
-          <i class="fas fa-rss"></i>
         </a>
       
     
@@ -523,6 +350,165 @@
 
 
 
+  
+  
+  
+
+  
+    
+
+    
+
+    
+    
+
+  <div class="card categories">
+    <!-- top-category -->
+    <div id="h_0"
+      class="card-header d-flex justify-content-between hide-border-bottom">
+      <span>
+        <i class="far fa-folder fa-fw"></i>
+
+        
+        <a style="color:#F66947;" href="/categories/personal-projects/" class="ml-1 mr-2">Personal projects</a>
+
+        <!-- content count -->
+        
+        <span class="text-muted small font-weight-light">
+          
+
+          4
+
+          
+            posts
+          
+        </span>
+      </span>
+
+      <!-- arrow -->
+      
+      <span data-toggle="collapse" class="category-trigger hide-border-bottom disabled">
+        <i class="fas fa-fw fa-angle-right"></i>
+      </span>
+      
+
+    </div> <!-- .card-header -->
+
+    <!-- Sub-categories -->
+    
+
+  </div> <!-- .card -->
+
+    
+
+  
+
+  
+  
+  
+
+  
+    
+
+    
+
+    
+    
+
+  <div class="card categories">
+    <!-- top-category -->
+    <div id="h_1"
+      class="card-header d-flex justify-content-between hide-border-bottom">
+      <span>
+        <i class="far fa-folder fa-fw"></i>
+
+        
+        <a style="color:#F66947;" href="/categories/university-projects/" class="ml-1 mr-2">University projects</a>
+
+        <!-- content count -->
+        
+        <span class="text-muted small font-weight-light">
+          
+
+          7
+
+          
+            posts
+          
+        </span>
+      </span>
+
+      <!-- arrow -->
+      
+      <span data-toggle="collapse" class="category-trigger hide-border-bottom disabled">
+        <i class="fas fa-fw fa-angle-right"></i>
+      </span>
+      
+
+    </div> <!-- .card-header -->
+
+    <!-- Sub-categories -->
+    
+
+  </div> <!-- .card -->
+
+    
+
+  
+
+  
+  
+  
+
+  
+    
+
+    
+
+    
+    
+
+  <div class="card categories">
+    <!-- top-category -->
+    <div id="h_2"
+      class="card-header d-flex justify-content-between hide-border-bottom">
+      <span>
+        <i class="far fa-folder fa-fw"></i>
+
+        
+        <a style="color:#F66947;" href="/categories/work-experiences/" class="ml-1 mr-2">Work experiences</a>
+
+        <!-- content count -->
+        
+        <span class="text-muted small font-weight-light">
+          
+
+          1
+
+          
+            post
+          
+        </span>
+      </span>
+
+      <!-- arrow -->
+      
+      <span data-toggle="collapse" class="category-trigger hide-border-bottom disabled">
+        <i class="fas fa-fw fa-angle-right"></i>
+      </span>
+      
+
+    </div> <!-- .card-header -->
+
+    <!-- Sub-categories -->
+    
+
+  </div> <!-- .card -->
+
+    
+
+  
+
 
     </div>
   
@@ -549,6 +535,49 @@
 
 
 
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/liferay-portal/">Liferay Portal + Stripe</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/twitter-analyzer/">Twitter Analyzer</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/antoniopelusi-com/">antoniopelusi.com</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/javafx-dark-theme/">JavaFX Dark Theme</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/keyholder-desktop/">KeyHolder desktop</a>
+        </li>
+      
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
+
 
               <!-- The trending tags list -->
 
@@ -566,7 +595,373 @@
 
 
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkslateblue-span-css/"><span style="color:darkSlateBlue">●</span> CSS</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-steelblue-span-python/"><span style="color:SteelBlue">●</span> python</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orange-span-java/"><span style="color:orange">●</span> java</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orangered-span-html/"><span style="color:OrangeRed">●</span> HTML</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-ffff33-span-javascript/"><span style="color:#ffff33">●</span> javascript</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-chocolate-span-jupyter-notebook/"><span style="color:chocolate">●</span> jupyter notebook</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkgreen-span-cuda/"><span style="color:darkgreen">●</span> cuda</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkred-span-ruby/"><span style="color:darkRed">●</span> ruby</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-gray-span-c/"><span style="color:gray">●</span> C</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-mediumseagreen-span-django/"><span style="color:MediumSeaGreen">●</span> django</a>
+      
+    </div>
+  </section>
 
 
             </div>
@@ -592,7 +987,7 @@
   <p>
     ©
     <time>2023</time>
-    <a href="https://twitter.com/username">your_full_name</a>.
+    <a href="https://twitter.com/iqbalasaleh">iqbalasaleh</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -602,7 +997,7 @@
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>:(){ :|:& };:
   </p>
 </footer>
 
@@ -630,7 +1025,373 @@
 
 
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkslateblue-span-css/"><span style="color:darkSlateBlue">●</span> CSS</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-steelblue-span-python/"><span style="color:SteelBlue">●</span> python</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orange-span-java/"><span style="color:orange">●</span> java</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orangered-span-html/"><span style="color:OrangeRed">●</span> HTML</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-ffff33-span-javascript/"><span style="color:#ffff33">●</span> javascript</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-chocolate-span-jupyter-notebook/"><span style="color:chocolate">●</span> jupyter notebook</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkgreen-span-cuda/"><span style="color:darkgreen">●</span> cuda</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkred-span-ruby/"><span style="color:darkRed">●</span> ruby</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-gray-span-c/"><span style="color:gray">●</span> C</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-mediumseagreen-span-django/"><span style="color:MediumSeaGreen">●</span> django</a>
+      
+    </div>
+  </section>
 
 
     </div>

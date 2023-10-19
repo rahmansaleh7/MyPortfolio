@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html lang="en" data-mode="dark">
   <!-- The Head -->
 
 <head>
@@ -41,19 +41,19 @@
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <link rel="canonical" href="http://localhost:4000/archives/" />
 <meta property="og:url" content="http://localhost:4000/archives/" />
-<meta property="og:site_name" content="Chirpy" />
+<meta property="og:site_name" content="IqbalASaleh" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-19T13:01:04+07:00" />
+<meta property="article:published_time" content="2023-10-19T14:55:58+07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Archives" />
-<meta name="twitter:site" content="@twitter_username" />
+<meta name="twitter:site" content="@iqbalasaleh" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-19T13:01:04+07:00","datePublished":"2023-10-19T13:01:04+07:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Archives","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/archives/"},"url":"http://localhost:4000/archives/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-19T14:55:58+07:00","datePublished":"2023-10-19T14:55:58+07:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Archives","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/archives/"},"url":"http://localhost:4000/archives/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Archives | Chirpy
+  <title>Archives | IqbalASaleh
   </title>
 
   <!--
@@ -68,8 +68,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Chirpy">
-<meta name="application-name" content="Chirpy">
+<meta name="apple-mobile-web-app-title" content="IqbalASaleh">
+<meta name="application-name" content="IqbalASaleh">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -113,151 +113,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -271,12 +126,15 @@
   <header class="profile-wrapper">
     <a href="/" id="avatar" class="rounded-circle">
       
+        
+        <img src="/assets/img/avatar.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
     </a>
 
     <h1 class="site-title">
-      <a href="/">Chirpy</a>
+      <a href="/">IqbalASaleh</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">A text-focused Jekyll theme</p>
+    <p class="site-subtitle fst-italic mb-0">Fokus, Keep Learning, and Share</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -291,6 +149,26 @@
       </li>
       <!-- the real tabs -->
       
+        <li class="nav-item active">
+          <a href="/archives/" class="nav-link">
+            <i class="fa-fw fas fa-archive"></i>
+            
+
+            <span>PROJECTS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/tags/" class="nav-link">
+            <i class="fa-fw fas fa-tag"></i>
+            
+
+            <span>TAGS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
         <li class="nav-item">
           <a href="/categories/" class="nav-link">
             <i class="fa-fw fas fa-stream"></i>
@@ -302,31 +180,11 @@
         <!-- .nav-item -->
       
         <li class="nav-item">
-          <a href="/tags/" class="nav-link">
-            <i class="fa-fw fas fa-tags"></i>
-            
-
-            <span>TAGS</span>
-          </a>
-        </li>
-        <!-- .nav-item -->
-      
-        <li class="nav-item active">
-          <a href="/archives/" class="nav-link">
-            <i class="fa-fw fas fa-archive"></i>
-            
-
-            <span>ARCHIVES</span>
-          </a>
-        </li>
-        <!-- .nav-item -->
-      
-        <li class="nav-item">
           <a href="/about/" class="nav-link">
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>ABOUT</span>
+            <span>ABOUT ME</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -336,33 +194,20 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
-    
 
     
       
 
       
         <a
-          href="https://github.com/github_username"
+          href="https://github.com/rahmansaleh7"
           aria-label="github"
           
 
           
-            target="_blank"
-            
-          
 
           
 
-          
-            rel="noopener noreferrer"
           
         >
           <i class="fab fa-github"></i>
@@ -373,7 +218,7 @@
 
       
         <a
-          href="https://twitter.com/twitter_username"
+          href="https://twitter.com/iqbalasaleh"
           aria-label="twitter"
           
 
@@ -410,24 +255,6 @@
         </a>
       
     
-      
-
-      
-        <a
-          href="/feed.xml"
-          aria-label="rss"
-          
-
-          
-
-          
-
-          
-        >
-          <i class="fas fa-rss"></i>
-        </a>
-      
-    
   </div>
   <!-- .sidebar-bottom -->
 </aside>
@@ -459,7 +286,7 @@
         
           
             
-              <span>Archives</span>
+              <span>Projects</span>
             
 
           
@@ -473,7 +300,7 @@
     </button>
 
     <div id="topbar-title">
-      Archives
+      Projects
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -508,7 +335,7 @@
     
     
     <h1 class="dynamic-title">
-      Archives
+      Projects
     </h1>
     <div class="content">
       
@@ -517,9 +344,217 @@
 
 
 
-
 <div id="archives" class="pl-xl-3">
+
+
   
+
+  
+    
+    <div style="color:#f66947;" class="year lead">2022</div>
+    <ul class="list-unstyled">
+    
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1670340540" data-df="DD">06</span>
+    <span class="date month small text-muted ml-1" data-ts="1670340540" data-df="MMM">
+      Dec
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/youtube-classification/">youtube-classification</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1668785340" data-df="DD">18</span>
+    <span class="date month small text-muted ml-1" data-ts="1668785340" data-df="MMM">
+      Nov
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/openstreetmap-neo4j/">openstreetmap-neo4j</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1668526140" data-df="DD">15</span>
+    <span class="date month small text-muted ml-1" data-ts="1668526140" data-df="MMM">
+      Nov
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/lu-solver/">lu-solver</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1667316540" data-df="DD">01</span>
+    <span class="date month small text-muted ml-1" data-ts="1667316540" data-df="MMM">
+      Nov
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/videogames-sales-analysis/">videogames-sales-analysis</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1666452540" data-df="DD">22</span>
+    <span class="date month small text-muted ml-1" data-ts="1666452540" data-df="MMM">
+      Oct
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/mtgdb/">mtgDB</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1665986400" data-df="DD">17</span>
+    <span class="date month small text-muted ml-1" data-ts="1665986400" data-df="MMM">
+      Oct
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/keyholder-desktop/">KeyHolder desktop</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1665598320" data-df="DD">13</span>
+    <span class="date month small text-muted ml-1" data-ts="1665598320" data-df="MMM">
+      Oct
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/javafx-dark-theme/">JavaFX Dark Theme</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1665101400" data-df="DD">07</span>
+    <span class="date month small text-muted ml-1" data-ts="1665101400" data-df="MMM">
+      Oct
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/antoniopelusi-com/">antoniopelusi.com</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1664345400" data-df="DD">28</span>
+    <span class="date month small text-muted ml-1" data-ts="1664345400" data-df="MMM">
+      Sep
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/twitter-analyzer/">Twitter Analyzer</a>
+  </li>
+
+  
+
+
+  
+
+  
+    </ul>
+    <div style="color:#f66947;" class="year lead">2021</div>
+    <ul class="list-unstyled">
+    
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1623208320" data-df="DD">09</span>
+    <span class="date month small text-muted ml-1" data-ts="1623208320" data-df="MMM">
+      Jun
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/liferay-portal/">Liferay Portal + Stripe</a>
+  </li>
+
+  
+
+
+  
+
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1622182200" data-df="DD">28</span>
+    <span class="date month small text-muted ml-1" data-ts="1622182200" data-df="MMM">
+      May
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/gameralley/">GamerAlley</a>
+  </li>
+
+  
+
+
+  
+
+  
+    </ul>
+    <div style="color:#f66947;" class="year lead">2020</div>
+    <ul class="list-unstyled">
+    
+  
+
+  <li>
+  
+    <span class="date day" data-ts="1591024200" data-df="DD">01</span>
+    <span class="date month small text-muted ml-1" data-ts="1591024200" data-df="MMM">
+      Jun
+    </span>
+    <a style="color:#FFFFFF;" href="/posts/file-splitter/">File Splitter</a>
+  </li>
+
+  </ul>
+
+
+
 </div>
 
     </div>
@@ -547,6 +582,49 @@
 
 
 
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/liferay-portal/">Liferay Portal + Stripe</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/twitter-analyzer/">Twitter Analyzer</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/antoniopelusi-com/">antoniopelusi.com</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/javafx-dark-theme/">JavaFX Dark Theme</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/keyholder-desktop/">KeyHolder desktop</a>
+        </li>
+      
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
+
 
               <!-- The trending tags list -->
 
@@ -564,7 +642,373 @@
 
 
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkslateblue-span-css/"><span style="color:darkSlateBlue">●</span> CSS</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-steelblue-span-python/"><span style="color:SteelBlue">●</span> python</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orange-span-java/"><span style="color:orange">●</span> java</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orangered-span-html/"><span style="color:OrangeRed">●</span> HTML</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-ffff33-span-javascript/"><span style="color:#ffff33">●</span> javascript</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-chocolate-span-jupyter-notebook/"><span style="color:chocolate">●</span> jupyter notebook</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkgreen-span-cuda/"><span style="color:darkgreen">●</span> cuda</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkred-span-ruby/"><span style="color:darkRed">●</span> ruby</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-gray-span-c/"><span style="color:gray">●</span> C</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-mediumseagreen-span-django/"><span style="color:MediumSeaGreen">●</span> django</a>
+      
+    </div>
+  </section>
 
 
             </div>
@@ -590,7 +1034,7 @@
   <p>
     ©
     <time>2023</time>
-    <a href="https://twitter.com/username">your_full_name</a>.
+    <a href="https://twitter.com/iqbalasaleh">iqbalasaleh</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -600,7 +1044,7 @@
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>:(){ :|:& };:
   </p>
 </footer>
 
@@ -628,7 +1072,373 @@
 
 
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkslateblue-span-css/"><span style="color:darkSlateBlue">●</span> CSS</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-steelblue-span-python/"><span style="color:SteelBlue">●</span> python</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orange-span-java/"><span style="color:orange">●</span> java</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-orangered-span-html/"><span style="color:OrangeRed">●</span> HTML</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-ffff33-span-javascript/"><span style="color:#ffff33">●</span> javascript</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-chocolate-span-jupyter-notebook/"><span style="color:chocolate">●</span> jupyter notebook</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkgreen-span-cuda/"><span style="color:darkgreen">●</span> cuda</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-darkred-span-ruby/"><span style="color:darkRed">●</span> ruby</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-gray-span-c/"><span style="color:gray">●</span> C</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/span-style-color-mediumseagreen-span-django/"><span style="color:MediumSeaGreen">●</span> django</a>
+      
+    </div>
+  </section>
 
 
     </div>
