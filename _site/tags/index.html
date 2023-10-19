@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
+
+
+
+
+
 
 
 
@@ -9,12 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="ina"
-  
-    data-mode="dark"
-  
->
-
+<html lang="en" >
   <!-- The Head -->
 
 <head>
@@ -33,28 +33,27 @@
   
 
   
-
-  
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Tags" />
-<meta property="og:locale" content="ina" />
-<meta name="description" content="Developer blog" />
-<meta property="og:description" content="Developer blog" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
+<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <link rel="canonical" href="http://localhost:4000/tags/" />
 <meta property="og:url" content="http://localhost:4000/tags/" />
-<meta property="og:site_name" content="iqbalasaleh" />
+<meta property="og:site_name" content="Chirpy" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-18T13:18:22+07:00" />
+<meta property="article:published_time" content="2023-10-19T13:01:04+07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Tags" />
+<meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-18T13:18:22+07:00","datePublished":"2023-10-18T13:18:22+07:00","description":"Developer blog","headline":"Tags","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/tags/"},"url":"http://localhost:4000/tags/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-19T13:01:04+07:00","datePublished":"2023-10-19T13:01:04+07:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Tags","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/tags/"},"url":"http://localhost:4000/tags/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Tags | iqbalasaleh
+  <title>Tags | Chirpy
   </title>
 
   <!--
@@ -69,8 +68,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="iqbalasaleh">
-<meta name="application-name" content="iqbalasaleh">
+<meta name="apple-mobile-web-app-title" content="Chirpy">
+<meta name="application-name" content="Chirpy">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -98,12 +97,14 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+
+  
 
   
 
@@ -111,329 +112,425 @@
 
   <!-- JavaScript -->
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  
+    <!-- Switch the mode between dark and light. -->
+
+<script type="text/javascript">
+  class ModeToggle {
+    static get MODE_KEY() {
+      return 'mode';
+    }
+    static get MODE_ATTR() {
+      return 'data-mode';
+    }
+    static get DARK_MODE() {
+      return 'dark';
+    }
+    static get LIGHT_MODE() {
+      return 'light';
+    }
+    static get ID() {
+      return 'mode-toggle';
+    }
+
+    constructor() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
+        if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
+          self.clearMode();
+        }
+
+        self.notify();
+      });
+    } /* constructor() */
+
+    get sysDarkPrefers() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
+    }
+
+    get isSysDarkPrefer() {
+      return this.sysDarkPrefers.matches;
+    }
+
+    get isDarkMode() {
+      return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
+    }
+
+    get hasMode() {
+      return this.mode != null;
+    }
+
+    get mode() {
+      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
+      } else {
+        return ModeToggle.LIGHT_MODE;
+      }
+    }
+
+    setDark() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+    }
+
+    setLight() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+    }
+
+    clearMode() {
+      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
+      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
+      window.postMessage(
+        {
+          direction: ModeToggle.ID,
+          message: this.modeStatus
+        },
+        '*'
+      );
+    }
+
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
+  } /* ModeToggle */
+
+  const modeToggle = new ModeToggle();
+</script>
 
   
+
+  <!-- A placeholder to allow defining custom metadata -->
+
 </head>
 
 
-  <body data-topbar-visible="true">
+  <body>
+    <!-- The Side Bar -->
 
-    <!--
-  The Side Bar
--->
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="/" id="avatar" class="rounded-circle">
+      
+    </a>
 
-<div id="sidebar" class="d-flex flex-column align-items-end">
-  <div class="profile-wrapper text-center">
-    <div id="avatar">
-      <a href="/" class="mx-auto">
-        
+    <h1 class="site-title">
+      <a href="/">Chirpy</a>
+    </h1>
+    <p class="site-subtitle fst-italic mb-0">A text-focused Jekyll theme</p>
+  </header>
+  <!-- .profile-wrapper -->
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
+      <li class="nav-item">
+        <a href="/" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>HOME</span>
+        </a>
+      </li>
+      <!-- the real tabs -->
+      
+        <li class="nav-item">
+          <a href="/categories/" class="nav-link">
+            <i class="fa-fw fas fa-stream"></i>
+            
+
+            <span>CATEGORIES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item active">
+          <a href="/tags/" class="nav-link">
+            <i class="fa-fw fas fa-tags"></i>
+            
+
+            <span>TAGS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/archives/" class="nav-link">
+            <i class="fa-fw fas fa-archive"></i>
+            
+
+            <span>ARCHIVES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/about/" class="nav-link">
+            <i class="fa-fw fas fa-info-circle"></i>
+            
+
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+    </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+    
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
+    
+
+    
+      
+
+      
+        <a
+          href="https://github.com/github_username"
+          aria-label="github"
           
-          <img src="/assets/img/avatar.png" alt="avatar" onerror="this.style.display='none'">
-        
-      </a>
-    </div>
 
-    <div class="site-title">
-      <a href="/">iqbalasaleh</a>
-    </div>
-    <div class="site-subtitle font-italic">Fokus, Keep Learning, and Share</div>
-
-  </div><!-- .profile-wrapper -->
-
-  <ul class="w-100">
-
-    <!-- home -->
-    <li class="nav-item">
-      <a href="/" class="nav-link">
-        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>HOME</span>
-      </a>
-    </li>
-    <!-- the real tabs -->
-    
-    <li class="nav-item">
-      <a href="/archives/" class="nav-link">
-        <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
-        
-
-        <span>PROJECTS</span>
-      </a>
-    </li> <!-- .nav-item -->
-    
-    <li class="nav-item active">
-      <a href="/tags/" class="nav-link">
-        <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
-        
-
-        <span>TAGS</span>
-      </a>
-    </li> <!-- .nav-item -->
-    
-    <li class="nav-item">
-      <a href="/categories/" class="nav-link">
-        <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
-        
-
-        <span>CATEGORIES</span>
-      </a>
-    </li> <!-- .nav-item -->
-    
-    <li class="nav-item">
-      <a href="/about/" class="nav-link">
-        <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
-        
-
-        <span>ABOUT ME</span>
-      </a>
-    </li> <!-- .nav-item -->
-    
-
-  </ul> <!-- ul.nav.flex-column -->
-
-  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
-
-    
-
-    
-      
-
-      
-      <a href="https://github.com/" aria-label="github"
-        
-
-        
-          target="_blank"
           
-        
-
-        
-
-        rel="noopener noreferrer">
-
-        <i class="fab fa-github"></i>
-      </a>
-      
-
-    
-      
-
-      
-      <a href="https://twitter.com/" aria-label="twitter"
-        
-
-        
-          target="_blank"
+            target="_blank"
+            
           
-        
 
-        
+          
 
-        rel="noopener noreferrer">
-
-        <i class="fab fa-twitter"></i>
-      </a>
-      
-
-    
-      
-
-      
-
-    
-      
-
-      
-      <a href="javascript:location.href = 'mailto:' + ['rahman.saleh7','gmail.com'].join('@')" aria-label="email"
-        
-
-        
-
-        
-
+          
+            rel="noopener noreferrer"
+          
         >
-
-        <i class="fas fa-envelope"></i>
-      </a>
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
       
 
-    
-
-  </div> <!-- .sidebar-bottom -->
-
-</div><!-- #sidebar -->
-
-
-    <!--
-  The Top Bar
--->
-
-<div id="topbar-wrapper">
-  <div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4">
-    <span id="breadcrumb">
-
-    
-
-    
-
       
-
-        
-          <span>
-            <a href="/">
-              Home
-            </a>
-          </span>
-
-        
-
-      
-
-        
-
-          
-            <span>Tags</span>
+        <a
+          href="https://twitter.com/twitter_username"
+          aria-label="twitter"
           
 
-        
+          
+            target="_blank"
+            
+          
 
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      
+    
       
 
+      
+        <a
+          href="javascript:location.href = 'mailto:' + ['example','domain.com'].join('@')"
+          aria-label="email"
+          
+
+          
+
+          
+
+          
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+      
     
+      
 
-    </span><!-- endof #breadcrumb -->
+      
+        <a
+          href="/feed.xml"
+          aria-label="rss"
+          
 
-    <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+          
+
+          
+
+          
+        >
+          <i class="fas fa-rss"></i>
+        </a>
+      
+    
+  </div>
+  <!-- .sidebar-bottom -->
+</aside>
+<!-- #sidebar -->
+
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        <!-- The Top Bar -->
+
+<header id="topbar-wrapper" aria-label="Top Bar">
+  <div
+    id="topbar"
+    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
+  >
+    <nav id="breadcrumb" aria-label="Breadcrumb">
+      
+
+      
+        
+          
+            <span>
+              <a href="/">
+                Home
+              </a>
+            </span>
+
+          
+        
+          
+            
+              <span>Tags</span>
+            
+
+          
+        
+      
+    </nav>
+    <!-- endof #breadcrumb -->
+
+    <button type="button" id="sidebar-trigger" class="btn btn-link">
+      <i class="fas fa-bars fa-fw"></i>
+    </button>
 
     <div id="topbar-title">
       Tags
     </div>
 
-    <i id="search-trigger" class="fas fa-search fa-fw"></i>
-    <span id="search-wrapper" class="align-items-center">
+    <button type="button" id="search-trigger" class="btn btn-link">
       <i class="fas fa-search fa-fw"></i>
-      <input class="form-control" id="search-input" type="search"
-        aria-label="search" autocomplete="off" placeholder="Search...">
-    </span>
-    <span id="search-cancel" >Cancel</span>
-  </div>
+    </button>
 
+    <search class="align-items-center ms-3 ms-lg-0">
+      <i class="fas fa-search fa-fw"></i>
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="Search..."
+      >
+    </search>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+  </div>
+</header>
+
+
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+
+
+
+<article class="px-1">
+  
+    
+    
+    <h1 class="dynamic-title">
+      Tags
+    </h1>
+    <div class="content">
+      <div id="tags" class="d-flex flex-wrap mx-xl-2">
+  
+  
+
+  
+
+  
 </div>
 
-
-    <div id="main-wrapper" class="d-flex justify-content-center">
-      <div id="main" class="container pl-xl-4 pr-xl-4">
-        
-
-
-
-
-
-
-
-
-
-<div class="row">
-
-  <!-- core -->
-  <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
-    <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-
-    
-
-    
-      
-      
-      <h1 class="dynamic-title">
-        Tags
-      </h1>
-      <div class="post-content">
-        
-      
-        <div id="tags" class="d-flex flex-wrap ml-xl-2 mr-xl-2">
-
-  
-  
-
-  
-
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-ffff33-span-javascript/">
-        <span style="color:#ffff33">●</span> javascript<span class="text-muted">2</span>
-      </a>
     </div>
   
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-chocolate-span-jupyter-notebook/">
-        <span style="color:chocolate">●</span> jupyter notebook<span class="text-muted">2</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-darkgreen-span-cuda/">
-        <span style="color:darkgreen">●</span> cuda<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-darkred-span-ruby/">
-        <span style="color:darkRed">●</span> ruby<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-darkslateblue-span-css/">
-        <span style="color:darkSlateBlue">●</span> CSS<span class="text-muted">6</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-gray-span-c/">
-        <span style="color:gray">●</span> C<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-mediumseagreen-span-django/">
-        <span style="color:MediumSeaGreen">●</span> django<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-orange-span-java/">
-        <span style="color:orange">●</span> java<span class="text-muted">4</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-orangered-span-html/">
-        <span style="color:OrangeRed">●</span> HTML<span class="text-muted">3</span>
-      </a>
-    </div>
-  
-    <div>
-      <a style="color:#aaaaaa;" class="tag" href="/tags/span-style-color-steelblue-span-python/">
-        <span style="color:SteelBlue">●</span> python<span class="text-muted">5</span>
-      </a>
-    </div>
-  
+</article>
 
-</div>
+            
+          </main>
 
-      
-    
-      </div>
-    
-
-    </div>
-  </div> <!-- #core-wrapper -->
-
-  <!-- panel -->
-  <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
-
-    <div class="access">
-      
+          <!-- panel -->
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+            <div class="access">
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -449,7 +546,7 @@
 
 
 
-      
+              <!-- The trending tags list -->
 
 
 
@@ -465,396 +562,55 @@
 
 
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
 
 
 
-  <div id="access-tags">
-    <div class="panel-heading">Trending Tags</div>
-    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+            </div>
 
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-darkslateblue-span-css/"><span style="color:darkSlateBlue">●</span> CSS</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-steelblue-span-python/"><span style="color:SteelBlue">●</span> python</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-orange-span-java/"><span style="color:orange">●</span> java</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-orangered-span-html/"><span style="color:OrangeRed">●</span> HTML</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-ffff33-span-javascript/"><span style="color:#ffff33">●</span> javascript</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-chocolate-span-jupyter-notebook/"><span style="color:chocolate">●</span> jupyter notebook</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-darkgreen-span-cuda/"><span style="color:darkgreen">●</span> cuda</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-darkred-span-ruby/"><span style="color:darkRed">●</span> ruby</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-gray-span-c/"><span style="color:gray">●</span> C</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-mediumseagreen-span-django/"><span style="color:MediumSeaGreen">●</span> django</a>
-    
+            
+          </aside>
+        </div>
 
-    </div>
-  </div>
+        <div class="row">
+          <!-- tail -->
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
 
+            <!-- The Footer -->
 
-    </div>
-
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>
+    ©
+    <time>2023</time>
+    <a href="https://twitter.com/username">your_full_name</a>.
     
-  </div>
+      <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+      >Some rights reserved.</span>
+    
+  </p>
 
-</div>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  </p>
+</footer>
 
-<!-- tail -->
+          </div>
+        </div>
 
+        <!-- The Search results -->
 
-      </div>
-
-      <!--
-  The Search results
--->
 <div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
-  <div class="col-12 col-sm-11 post-content">
+  <div class="col-11 content">
     <div id="search-hints">
-      
+      <!-- The trending tags list -->
 
 
 
@@ -870,375 +626,7 @@
 
 
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-
-
-  <div id="access-tags">
-    <div class="panel-heading">Trending Tags</div>
-    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-darkslateblue-span-css/"><span style="color:darkSlateBlue">●</span> CSS</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-steelblue-span-python/"><span style="color:SteelBlue">●</span> python</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-orange-span-java/"><span style="color:orange">●</span> java</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-orangered-span-html/"><span style="color:OrangeRed">●</span> HTML</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-ffff33-span-javascript/"><span style="color:#ffff33">●</span> javascript</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-chocolate-span-jupyter-notebook/"><span style="color:chocolate">●</span> jupyter notebook</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-darkgreen-span-cuda/"><span style="color:darkgreen">●</span> cuda</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-darkred-span-ruby/"><span style="color:darkRed">●</span> ruby</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-gray-span-c/"><span style="color:gray">●</span> C</a>
-    
-      
-      <a class="post-tag" href="/tags/span-style-color-mediumseagreen-span-django/"><span style="color:MediumSeaGreen">●</span> django</a>
-    
-
-    </div>
-  </div>
 
 
     </div>
@@ -1246,99 +634,52 @@
   </div>
 </div>
 
-
-    </div> <!-- #main-wrapper -->
-
-    <!-- The Footer -->
-
-<footer>
-  <div class="container pl-lg-4 pr-lg-4">
-    <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
-      <div class="footer-left">
-        <p class="mb-0">
-          © 2023
-          <a href="https://twitter.com/iqbalasaleh">Iqbal A Saleh</a>.
-          
-          <span data-toggle="tooltip" data-placement="top"
-            title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span>
-          
-        </p>
       </div>
 
-      <div class="footer-right">
-        <p class="mb-0">Fokus, Keep Learning, and Share
-        </p>
-      </div>
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
     </div>
-  </div>
-</footer>
-
-
-    
 
     <div id="mask"></div>
 
-    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
-      <i class="fas fa-angle-up"></i>
-    </a>
+    
+      <aside
+  id="notification"
+  class="toast"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-bs-animation="true"
+  data-bs-autohide="false"
+>
+  <div class="toast-header">
+    <button
+      type="button"
+      class="btn-close ms-auto"
+      data-bs-dismiss="toast"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="toast-body text-center pt-0">
+    <p class="px-2 mb-3">A new version of content is available.</p>
+    <button type="button" class="btn btn-primary" aria-label="Update">
+      Update
+    </button>
+  </div>
+</aside>
 
     
-      <div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
-        data-animation="true" data-autohide="false">
-        <div class="toast-header">
-          <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="toast-body text-center pt-0">
-          <p class="pl-2 pr-2 mb-3">A new version of content is available.</p>
-          <button type="button" class="btn btn-primary" aria-label="Update">
-            Update
-          </button>
-        </div>
-      </div>
-    
 
-    <!--
-  Jekyll Simple Search loader
-  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
--->
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
-
-<script>
-SimpleJekyllSearch({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('search-results'),
-  json: '/assets/js/data/search.json',
-  searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
-  noResultsText: '<p class="mt-5">Oops! No results found.</p>',
-  templateMiddleware: function(prop, value, template) {
-    if (prop === 'categories') {
-      if (value === '') {
-        return `${value}`;
-      } else {
-        return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
-      }
-    }
-
-    if (prop === 'tags') {
-      if (value === '') {
-        return `${value}`;
-      } else {
-        return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
-      }
-    }
-  }
-});
-</script>
-
+    <!-- JavaScripts -->
 
     <!-- JS selector for site. -->
+
+<!-- commons -->
+
+
 
 <!-- layout specified -->
 
@@ -1351,18 +692,88 @@ SimpleJekyllSearch({
 
 
 
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+
+
+
+
+
+
 <script defer src="/assets/js/dist/commons.min.js"></script>
 
 
 
-<!-- commons -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
+    
+
+    <!--
+  Jekyll Simple Search loader
+  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
+-->
+
+
+
+
+
+<script>
+  /* Note: dependent library will be loaded in `js-selector.html` */
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('search-results'),
+    json: '/assets/js/data/search.json',
+    searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
+    noResultsText: '<p class="mt-5"></p>',
+    templateMiddleware: function(prop, value, template) {
+      if (prop === 'categories') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+        }
+      }
+
+      if (prop === 'tags') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+        }
+      }
+    }
+  });
+</script>
 
   </body>
-
 </html>
 
