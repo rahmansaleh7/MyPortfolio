@@ -11,7 +11,7 @@ A complete CSS stylesheet to set a dark theme in your JavaFX UI. 🌘
 
 Built on top of the default JavaFX theme (Modena)
 
-Download stylesheet [**here**](https://github.com/antoniopelusi/JavaFX-Dark-Theme)!
+<!-- Download stylesheet [**here**](https://github.com/antoniopelusi/JavaFX-Dark-Theme)!
 
 <br>
 
@@ -56,4 +56,4 @@ Download stylesheet [**here**](https://github.com/antoniopelusi/JavaFX-Dark-Them
 - Tab
 - TitledPane
 - TableView
-- Tooltip
+- Tooltip -->

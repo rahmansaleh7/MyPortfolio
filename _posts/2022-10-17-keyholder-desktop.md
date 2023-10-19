@@ -6,7 +6,7 @@ categories: [Personal projects]
 tags: [<span style="color:orange">●</span> java, <span style="color:darkSlateBlue">●</span> CSS]
 render_with_liquid: false
 ---
-
+<!-- 
 [![](https://img.shields.io/badge/Version-1.2-white)]()
 [![](https://img.shields.io/badge/Open_Source-GPL--3.0-informational)]()
 
@@ -66,4 +66,4 @@ Database view:
 <br>
 
 ## Flow diagram 🧭
-![](https://raw.githubusercontent.com/antoniopelusi/KeyHolder-desktop/main/flow.png)
+![](https://raw.githubusercontent.com/antoniopelusi/KeyHolder-desktop/main/flow.png) -->

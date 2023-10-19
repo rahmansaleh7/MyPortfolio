@@ -13,7 +13,7 @@ render_with_liquid: false
  App that implement different graph operation on Neo4j database that contain Open Street Map nodes. 
  
 ## Installation
-- [Neo4j Desktop](https://neo4j.com/download/)
+<!-- - [Neo4j Desktop](https://neo4j.com/download/)
 - [Python](https://www.python.org/downloads/)
 - Py2neo: ```pip install py2neo```
 - Neo4j APOC library (install from Neo4j Desktop)
@@ -46,4 +46,4 @@ Work on all Operative Systems
 
 ```8 Find the shortest path between two points of interest```
 
-```9 List all available Routes from a Point Of Interest```
+```9 List all available Routes from a Point Of Interest``` -->

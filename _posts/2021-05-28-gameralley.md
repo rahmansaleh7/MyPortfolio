@@ -6,7 +6,7 @@ categories: [University projects]
 tags: [<span style="color:OrangeRed">●</span> HTML, <span style="color:SteelBlue">●</span> python, <span style="color:#ffff33">●</span> javascript, <span style="color:darkSlateBlue">●</span> CSS, <span style="color:MediumSeaGreen">●</span> django]
 render_with_liquid: false
 ---
-
+<!-- 
 > this project was developed for an university exam.
 {: .prompt-info }
 
@@ -86,4 +86,4 @@ _email_ | _password_ to login in GamerAlley
 - annabianchi@email.com | **passwordanna**
 - valentinorossi@email.com | **passwordvale**
 - giorgiobruni@email.com | **passwordgiorgio**
-- michelagialli@email.com | **passwordmichela**
+- michelagialli@email.com | **passwordmichela** -->

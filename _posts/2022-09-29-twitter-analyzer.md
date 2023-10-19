@@ -6,7 +6,7 @@ categories: [University projects]
 tags: [<span style="color:orange">●</span> java, <span style="color:darkSlateBlue">●</span> CSS]
 render_with_liquid: false
 ---
-
+<!-- 
 > this project was developed for an university exam.
 {: .prompt-info }
 
@@ -43,4 +43,4 @@ Source code available [**here**](https://github.com/antoniopelusi/Twitter-Analyz
 * `pom.xml` &#8594; maven file
 
 ## Screenshots
-![](/assets/img/posts_images/twitteranalyzer.png)
+![](/assets/img/posts_images/twitteranalyzer.png) -->

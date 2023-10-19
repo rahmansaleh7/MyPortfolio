@@ -6,7 +6,7 @@ categories: [University projects]
 tags: [<span style="color:SteelBlue">●</span> python, <span style="color:chocolate">●</span> jupyter notebook]
 render_with_liquid: false
 ---
-
+<!-- 
 > this project was developed for an university exam.
 {: .prompt-info }
 
@@ -61,4 +61,4 @@ Exploratory analysis and correlation between sales of video games and consoles i
 
 - Video game sales dataset obtained from the scraping of [vgChartz](https://www.vgchartz.com/gamedb/) *(vgsales.csv)*
 
-- Console sales dataset retrieved from [Kaggle.com](https://www.kaggle.com/datasets/jaimepazlopes/game-console-manufactor-and-sales) *(console.csv)*
+- Console sales dataset retrieved from [Kaggle.com](https://www.kaggle.com/datasets/jaimepazlopes/game-console-manufactor-and-sales) *(console.csv)* -->

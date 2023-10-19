@@ -6,7 +6,7 @@ categories: [University projects]
 tags: [<span style="color:SteelBlue">●</span> python, <span style="color:chocolate">●</span> jupyter notebook]
 render_with_liquid: false
 ---
-
+<!-- 
 > this project was developed for an university exam.
 {: .prompt-info }
 
@@ -29,4 +29,4 @@ Implemented classifier and relative accuracy achieved:
 |:-:|:-:|:-:|
 |Naive Bayes|NLTK|88%|
 |Naive Bayes|SciKit Learn|89%|
-|Stochastic Gradient Descent|SciKit Learn|95%|
+|Stochastic Gradient Descent|SciKit Learn|95%| -->

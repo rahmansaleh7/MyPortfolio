@@ -7,7 +7,7 @@ tags: [<span style="color:orange">●</span> java]
 render_with_liquid: false
 ---
 
-A simple tool to split, zip, and encrypt files
+<!-- A simple tool to split, zip, and encrypt files
 
 
 Source code available [**here**](https://github.com/antoniopelusi/File-Splitter)
@@ -40,4 +40,4 @@ Need Java virtual machine to start, available [**here**](https://www.java.com/en
 The documentation for this project is available in the **/doc** folder
 
 ## Screenshots
-![](/assets/img/posts_images/filesplitter.png)
+![](/assets/img/posts_images/filesplitter.png) -->
