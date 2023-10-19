@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>IqbalASaleh</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-10-19T14:55:58+07:00</updated>
+  <updated>2023-10-19T17:34:46+07:00</updated>
   <author>
     <name>iqbalasaleh</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/youtube-classification/" rel="alternate" type="text/html" title="youtube-classification" />
     <published>2022-12-06T22:29:00+07:00</published>
   
-    <updated>2023-10-19T13:04:48+07:00</updated>
+    <updated>2023-10-19T17:30:11+07:00</updated>
   
     <id>http://localhost:4000/posts/youtube-classification/</id>
     <content src="http://localhost:4000/posts/youtube-classification/" />
@@ -89,7 +89,7 @@ Implemented classifier and relative accuracy achieved:
     <link href="http://localhost:4000/posts/openstreetmap-neo4j/" rel="alternate" type="text/html" title="openstreetmap-neo4j" />
     <published>2022-11-18T22:29:00+07:00</published>
   
-    <updated>2023-10-19T13:04:48+07:00</updated>
+    <updated>2023-10-19T17:30:11+07:00</updated>
   
     <id>http://localhost:4000/posts/openstreetmap-neo4j/</id>
     <content src="http://localhost:4000/posts/openstreetmap-neo4j/" />
@@ -142,7 +142,7 @@ Work on all Operative Systems
     <link href="http://localhost:4000/posts/lu-solver/" rel="alternate" type="text/html" title="lu-solver" />
     <published>2022-11-15T22:29:00+07:00</published>
   
-    <updated>2023-10-19T13:04:48+07:00</updated>
+    <updated>2023-10-19T17:30:11+07:00</updated>
   
     <id>http://localhost:4000/posts/lu-solver/</id>
     <content src="http://localhost:4000/posts/lu-solver/" />
@@ -200,7 +200,7 @@ Device used: Jetson Nano
     <link href="http://localhost:4000/posts/videogames-sales-analysis/" rel="alternate" type="text/html" title="videogames-sales-analysis" />
     <published>2022-11-01T22:29:00+07:00</published>
   
-    <updated>2023-10-19T13:04:48+07:00</updated>
+    <updated>2023-10-19T17:30:11+07:00</updated>
   
     <id>http://localhost:4000/posts/videogames-sales-analysis/</id>
     <content src="http://localhost:4000/posts/videogames-sales-analysis/" />
@@ -265,7 +265,7 @@ Index
     <link href="http://localhost:4000/posts/mtgdb/" rel="alternate" type="text/html" title="mtgDB" />
     <published>2022-10-22T22:29:00+07:00</published>
   
-    <updated>2023-10-19T13:04:48+07:00</updated>
+    <updated>2023-10-19T17:30:11+07:00</updated>
   
     <id>http://localhost:4000/posts/mtgdb/</id>
     <content src="http://localhost:4000/posts/mtgdb/" />
