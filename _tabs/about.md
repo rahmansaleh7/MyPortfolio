@@ -1,53 +1,43 @@
 ---
-icon: fas fa-info-circle
+icon: fas fa-user-secret
 order: 4
 layout: page
 ---
 <div style="font-size: 1rem;">
-  <h2>   👋 Hi, I am Antonio Pelusi</h2>
+    <h2>   👋 Hi, I am Iqbal A Saleh</h2>
 
-  <p>   🎓  I am a Computer Science graduate at <a href="https://www.unimore.it/">Unimore</a>, Modena (IT)</p>
+    <p>   🎓  I graduated with a bachelor's degree in Informatics Engineering at <a href="https://new.unla.ac.id/">Langlangbuana University</a>.</p>
 
-  <p>   🌱  Currently enrolled in the Master's Degree course in Computer Science at <a href="https://www.unimore.it/">Unimore</a>, Modena (IT)</p>
+    <p>   📚  I really want to be able to create software or systems that can be useful and make your work easier</p>
 
-  <p>   🕹️  Videogames enthusiast</p>
-
-  <p>   🎸  Guitar player</p>
-
-  <p>   👾  Browse my projects <a href="https://www.antoniopelusi.com/archives/">here</a>!</p>
 </div>
 
 
 ---
-## 📚 Skills and known programming languages
-- C
-- C++
-- Java
-- Kotlin
-- Python
-- HTML/CSS/JavaScript
-- JavaFX
-- Django framework
-- Servlet-based Web Apps
-- Databases (relational, graph based, document based)
-- Data Analytics
-- Text mining
+## 📚 Skills and Known Programming Languages
+
+<div>
+    <img src="/assets/img/icons/Python-Light.svg" width="50">
+    <img src="/assets/img/icons/PHP-Light.svg" width="50">
+    <img src="/assets/img/icons/JavaScript.svg" width="50">
+    <img src="/assets/img/icons/odoo.svg" width="100">
+    <img src="/assets/img/icons/Wordpress.svg" width="50">
+    <img src="/assets/img/icons/application-jekyll.svg" width="50">
+</div>
 
 ---
-## 🔧 Work experiences
+<!-- ## 🔧 Work experiences
 - Internship in [Liferay](https://www.liferay.com/), in which I integrated a new payment method, [Stripe](https://stripe.com/), into [Liferay Portal](https://github.com/liferay/liferay-portal).
-Find more [here](https://www.antoniopelusi.com/posts/liferay-portal/)
+Find more [here](https://www.antoniopelusi.com/posts/liferay-portal/) -->
 
 ---
 ## 📞 Contact me
 
-<i class="fas fa-envelope" aria-hidden="true"></i> **Email**: [antoniopelusi2000@gmail.com](mailto:antoniopelusi2000@gmail.com)
+<i class="fas fa-envelope" aria-hidden="true"></i> **Email**: [rahman.saleh7@gmail.com](mailto:rahman.saleh7@gmail.com)
 
-<i class="fab fa-linkedin" aria-hidden="true"></i> **LinkedIn**: [@antoniopelusi](https://www.linkedin.com/in/antoniopelusi/)
+<i class="fab fa-twitter" aria-hidden="true"></i> **Twitter**: [@iqbalasaleh](https://twitter.com/iqbalasaleh)
 
-<i class="fab fa-twitter" aria-hidden="true"></i> **Twitter**: [@antopelusi](https://twitter.com/antopelusi)
-
-<i class="fab fa-github" aria-hidden="true"></i> **GitHub**: [@antoniopelusi](https://github.com/antoniopelusi)
+<i class="fab fa-github" aria-hidden="true"></i> **GitHub**: [@rahmansaleh7](https://github.com/rahmansaleh7)
 
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
