@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>IqbalASaleh</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-10-19T17:34:46+07:00</updated>
+  <updated>2023-10-20T08:50:58+07:00</updated>
   <author>
     <name>iqbalasaleh</name>
     <uri>http://localhost:4000/</uri>
@@ -13,28 +13,28 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2023 iqbalasaleh </rights>
+  <rights> © 2023 - 2023 iqbalasaleh </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
-    <title>youtube-classification</title>
-    <link href="http://localhost:4000/posts/youtube-classification/" rel="alternate" type="text/html" title="youtube-classification" />
-    <published>2022-12-06T22:29:00+07:00</published>
+    <title>KeyHolder mobile</title>
+    <link href="http://localhost:4000/posts/keyholder-mobile/" rel="alternate" type="text/html" title="KeyHolder mobile" />
+    <published>2023-06-18T13:00:00+07:00</published>
   
-    <updated>2023-10-19T17:30:11+07:00</updated>
+    <updated>2023-10-19T23:08:03+07:00</updated>
   
-    <id>http://localhost:4000/posts/youtube-classification/</id>
-    <content src="http://localhost:4000/posts/youtube-classification/" />
+    <id>http://localhost:4000/posts/keyholder-mobile/</id>
+    <content src="http://localhost:4000/posts/keyholder-mobile/" />
     <author>
-      <name>antoniopelusi</name>
+      <name>iqbalasaleh</name>
     </author>
 
   
     
-    <category term="University projects" />
+    <category term="Personal projects" />
     
   
 
@@ -46,269 +46,8 @@
 
 
 
-      
-  this project was developed for an university exam.
+      In developement
 
-
-Multiclass classification of Youtube videos using text mining.
-
-Youtube videos categories:
-
-  travel
-  science and technology
-  food
-  manufacturing
-  history
-  art and music
-  nature
-  sports
-  adventure
-
-
-Implemented classifier and relative accuracy achieved:
-
-
-  
-    
-      Classifier
-      Library
-      Accuracy
-    
-  
-  
-    
-      N...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>openstreetmap-neo4j</title>
-    <link href="http://localhost:4000/posts/openstreetmap-neo4j/" rel="alternate" type="text/html" title="openstreetmap-neo4j" />
-    <published>2022-11-18T22:29:00+07:00</published>
-  
-    <updated>2023-10-19T17:30:11+07:00</updated>
-  
-    <id>http://localhost:4000/posts/openstreetmap-neo4j/</id>
-    <content src="http://localhost:4000/posts/openstreetmap-neo4j/" />
-    <author>
-      <name>antoniopelusi</name>
-    </author>
-
-  
-    
-    <category term="University projects" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-  this project was developed for an university exam.
-
-
-App that implement different graph operation on Neo4j database that contain Open Street Map nodes.
-
-Installation
-
-  Neo4j Desktop
-  Python
-  Py2neo: pip install py2neo
-  Neo4j APOC library (install from Neo4j Desktop)
-  OpenStreetMap dataset available as sample project in Neo4j Desktop
-
-
-Run
-Work on all Operative Systems
-
-
-  Start Neo4j De...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>lu-solver</title>
-    <link href="http://localhost:4000/posts/lu-solver/" rel="alternate" type="text/html" title="lu-solver" />
-    <published>2022-11-15T22:29:00+07:00</published>
-  
-    <updated>2023-10-19T17:30:11+07:00</updated>
-  
-    <id>http://localhost:4000/posts/lu-solver/</id>
-    <content src="http://localhost:4000/posts/lu-solver/" />
-    <author>
-      <name>antoniopelusi</name>
-    </author>
-
-  
-    
-    <category term="University projects" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-  this project was developed for an university exam.
-
-
-The LU decomposition factors a square matrix A into the product of two matrices:
-
-
-  A = LU
-
-
-where:
-
-
-  L is a lower triangular matrix (all elements above the diagonal are zero);
-  U is an upper triangular matrix (all the elements below the diagonal are zero).
-
-
-Parallelization made using:
-
-  OpenMP
-  CUDA
-
-
-Device used: Jetson Nano
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>videogames-sales-analysis</title>
-    <link href="http://localhost:4000/posts/videogames-sales-analysis/" rel="alternate" type="text/html" title="videogames-sales-analysis" />
-    <published>2022-11-01T22:29:00+07:00</published>
-  
-    <updated>2023-10-19T17:30:11+07:00</updated>
-  
-    <id>http://localhost:4000/posts/videogames-sales-analysis/</id>
-    <content src="http://localhost:4000/posts/videogames-sales-analysis/" />
-    <author>
-      <name>antoniopelusi</name>
-    </author>
-
-  
-    
-    <category term="University projects" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-  this project was developed for an university exam.
-
-
-Exploratory analysis and correlation between sales of video games and consoles in the world.
-
-Index
-
-  
-    Introduction
-  
-  
-    Data Collection
-
-    
-      
-        Video game sales dataset
-      
-      
-        Console sales dataset
-      
-    
-  
-  
-    Data Processing
-
-    
-      
-        Cleanup of datasets
-      
-      
-        Val...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>mtgDB</title>
-    <link href="http://localhost:4000/posts/mtgdb/" rel="alternate" type="text/html" title="mtgDB" />
-    <published>2022-10-22T22:29:00+07:00</published>
-  
-    <updated>2023-10-19T17:30:11+07:00</updated>
-  
-    <id>http://localhost:4000/posts/mtgdb/</id>
-    <content src="http://localhost:4000/posts/mtgdb/" />
-    <author>
-      <name>antoniopelusi</name>
-    </author>
-
-  
-    
-    <category term="University projects" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-  this project was developed for an university exam.
-
-
-A Magic The Gathering database manager
-
-Use PyMongo for the connection to the MongoDB database and Pandas to print the results
-
-Source code available here
-
-Installation
-
-  Install MongoDB
-  Install Python
-  Install Pymongo: pip install pymongo
-  Install Pandas: pip install pandas
-
-
-Run
-Work on all Operative Systems
-
-  Start MongoDB service...
     </summary>
   
 
