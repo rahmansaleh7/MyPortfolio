@@ -17,12 +17,12 @@ layout: page
 ## 📚 Skills and Known Programming Languages
 
 <div>
-    <img src="/assets/img/icons/Python-Light.svg" width="50">
-    <img src="/assets/img/icons/PHP-Light.svg" width="50">
-    <img src="/assets/img/icons/JavaScript.svg" width="50">
-    <img src="/assets/img/icons/odoo.svg" width="100">
-    <img src="/assets/img/icons/Wordpress.svg" width="50">
-    <img src="/assets/img/icons/application-jekyll.svg" width="50">
+    <img src="/assets/img/icons/Python-Light.svg" width="50" alt="">
+    <img src="/assets/img/icons/PHP-Light.svg" width="50" alt="">
+    <img src="/assets/img/icons/JavaScript.svg" width="50" alt="">
+    <img src="/assets/img/icons/odoo.svg" width="100" alt="">
+    <img src="/assets/img/icons/Wordpress.svg" width="50" alt="">
+    <img src="/assets/img/icons/application-jekyll.svg" width="50" alt="">
 </div>
 
 ---

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>IqbalASaleh</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-10-20T16:03:15+07:00</updated>
+  <updated>2023-10-20T16:06:24+07:00</updated>
   <author>
     <name>iqbalasaleh</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/keyholder-mobile/" rel="alternate" type="text/html" title="KeyHolder mobile" />
     <published>2023-06-18T13:00:00+07:00</published>
   
-    <updated>2023-10-19T23:08:03+07:00</updated>
+    <updated>2023-10-20T16:04:20+07:00</updated>
   
     <id>http://localhost:4000/posts/keyholder-mobile/</id>
     <content src="http://localhost:4000/posts/keyholder-mobile/" />
