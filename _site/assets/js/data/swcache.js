@@ -11,6 +11,8 @@ const resource = [
   '/404.html',
 
   
+    '/experience/',
+  
     '/archives/',
   
     '/tags/',

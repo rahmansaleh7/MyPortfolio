@@ -1,6 +1,6 @@
 ---
 icon: fas fa-user-secret
-order: 4
+order: 5
 layout: page
 ---
 <div style="font-size: 1rem;">
@@ -9,6 +9,10 @@ layout: page
     <p>   🎓  I graduated with a bachelor's degree in Informatics Engineering at <a href="https://new.unla.ac.id/">Langlangbuana University</a>.</p>
 
     <p>   📚  I really want to be able to create software or systems that can be useful and make your work easier</p>
+
+    <p>   🔧  Now I only focus on developing Open Source ERP applications based on Python, in this case I use Odoo for implementation in various companies, such as accounting modules, human resources, purchasing, sales, logistics, manufacturing, academics and others.</p>
+
+    <p>  🔎   Some of the implementations that I do are clients of the office where I currently work (vitraining.com).</p>
 
 </div>
 
@@ -26,9 +30,8 @@ layout: page
 </div>
 
 ---
-<!-- ## 🔧 Work experiences
-- Internship in [Liferay](https://www.liferay.com/), in which I integrated a new payment method, [Stripe](https://stripe.com/), into [Liferay Portal](https://github.com/liferay/liferay-portal).
-Find more [here](https://www.antoniopelusi.com/posts/liferay-portal/) -->
+## 🔧 Work experiences
+- Check My Experience in [Here](https://www.iqbalasaleh.com/experience)
 
 ---
 ## 📞 Contact me

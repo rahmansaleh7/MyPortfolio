@@ -13,8 +13,9 @@ tabs:
   home: Home
   categories: Categories
   tags: Tags
-  archives: Projects
+  archives: Blog
   about: About me
+  experience: Experience
 
 # the text displayed in the search bar & search results
 search:

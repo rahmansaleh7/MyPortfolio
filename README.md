@@ -1,7 +1,10 @@
 # MyPortofolio
+**Thanks to :**
+[Chirpy Jekyll Theme](https://chirpy.cotes.page/).
+[antoniopelusi.com](https://www.antoniopelusi.com/).
 
+task: 
 google analytics id
-layouts --> page.html
 
 # Chirpy Starter
 

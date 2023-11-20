@@ -3,9 +3,9 @@
   {
     "title": "KeyHolder mobile",
     "url": "/posts/keyholder-mobile/",
-    "categories": "Personal projects",
+    "categories": "Blog",
     "tags": "<span style=\"color:#FF6303;\">●</span> getting started",
-    "date": "2023-06-18 13:00:00 +0700",
+    "date": "2022-10-18 13:00:00 +0700",
     
 
 
@@ -15,6 +15,23 @@
     
     "snippet": "In developement",
     "content": "In developement"
+  },
+  
+  {
+    "title": "Pengajar Komputer Bimbel KSS",
+    "url": "/posts/pengajar-bimbel-komputer/",
+    "categories": "Experience",
+    "tags": "<span style=\"color:#AEF5ED;\">●</span> Instructor",
+    "date": "2010-02-01 13:00:00 +0700",
+    
+
+
+
+
+
+    
+    "snippet": "Tahun 2010Saya Bekerja sebagai Pengajar Komputer di bimbingan belajar KSS(Kelompok Study Sarjana)",
+    "content": "Tahun 2010Saya Bekerja sebagai Pengajar Komputer di bimbingan belajar KSS(Kelompok Study Sarjana)"
   }
   
 ]
