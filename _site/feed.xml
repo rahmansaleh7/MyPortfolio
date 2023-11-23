@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>IqbalASaleh</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-11-20T14:14:23+07:00</updated>
+  <updated>2023-11-23T16:08:19+07:00</updated>
   <author>
     <name>iqbalasaleh</name>
     <uri>http://localhost:4000/</uri>
@@ -20,19 +20,21 @@
 
   
   <entry>
-    <title>KeyHolder mobile</title>
-    <link href="http://localhost:4000/posts/keyholder-mobile/" rel="alternate" type="text/html" title="KeyHolder mobile" />
-    <published>2022-10-18T13:00:00+07:00</published>
+    <title>Augmented Reality Gerakan Shalat Untuk Anak</title>
+    <link href="http://localhost:4000/posts/augmented-reality-gerakan-shalat-untuk-anak/" rel="alternate" type="text/html" title="Augmented Reality Gerakan Shalat Untuk Anak" />
+    <published>2019-09-30T13:00:00+07:00</published>
   
-    <updated>2023-10-20T16:04:20+07:00</updated>
+    <updated>2019-09-30T13:00:00+07:00</updated>
   
-    <id>http://localhost:4000/posts/keyholder-mobile/</id>
-    <content src="http://localhost:4000/posts/keyholder-mobile/" />
+    <id>http://localhost:4000/posts/augmented-reality-gerakan-shalat-untuk-anak/</id>
+    <content src="http://localhost:4000/posts/augmented-reality-gerakan-shalat-untuk-anak/" />
     <author>
       <name>iqbalasaleh</name>
     </author>
 
   
+    
+    <category term="Experience" />
     
     <category term="Blog" />
     
@@ -46,8 +48,15 @@
 
 
 
-      In developement
+      Tahun 2019
 
+Augmented Reality
+
+
+Augmented Reality Gerakan Shalat Untuk Anak adalah aplikasi mobile yang dibangun dengan software Unity. 
+Augmented reality pada aplikasi ini digunakan sebagai media interaksi antara user dengan aplikasi. 
+Library Augmented Reality yang digunakan dalam aplikasi ini adalah vuforia qualcomm. 
+Vuforia merupakan library yang dapat digunakan untuk mobile platform seper...
     </summary>
   
 

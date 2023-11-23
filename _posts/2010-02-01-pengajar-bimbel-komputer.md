@@ -6,6 +6,7 @@ categories: [Experience]
 tags: [<span style="color:#AEF5ED;">●</span> Instructor]
 render_with_liquid: false
 ---
+
 ***Tahun 2010***
 
 Saya Bekerja sebagai Pengajar Komputer di bimbingan belajar KSS(Kelompok Study Sarjana)
