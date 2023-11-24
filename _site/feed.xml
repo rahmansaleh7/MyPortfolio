@@ -3,8 +3,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/</id>
   <title>IqbalASaleh</title>
-  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-11-23T16:08:19+07:00</updated>
+  <subtitle>Fokus, Keep Learning, and Share</subtitle>
+  <updated>2023-11-24T13:59:00+07:00</updated>
   <author>
     <name>iqbalasaleh</name>
     <uri>http://localhost:4000/</uri>
@@ -68,7 +68,7 @@ Vuforia merupakan library yang dapat digunakan untuk mobile platform seper...
     <link href="http://localhost:4000/posts/pengajar-bimbel-komputer/" rel="alternate" type="text/html" title="Pengajar Komputer Bimbel KSS" />
     <published>2010-02-01T13:00:00+07:00</published>
   
-    <updated>2010-02-01T13:00:00+07:00</updated>
+    <updated>2023-11-23T16:09:01+07:00</updated>
   
     <id>http://localhost:4000/posts/pengajar-bimbel-komputer/</id>
     <content src="http://localhost:4000/posts/pengajar-bimbel-komputer/" />
