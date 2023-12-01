@@ -15,10 +15,6 @@ const resource = [
   
     '/archives/',
   
-    '/tags/',
-  
-    '/categories/',
-  
     '/about/',
   
 

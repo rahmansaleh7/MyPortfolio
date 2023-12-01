@@ -1,6 +1,6 @@
 ---
 layout: experience
-icon: fas fa-archive
+icon: fas fa-laptop-house
 order: 1
 ---
 
