@@ -1,6 +1,6 @@
 ---
-layout: home #archives
-icon: fas fa-book
+layout: archives
+icon: fas fa-archive
 order: 2
 ---
 

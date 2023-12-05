@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>IqbalASaleh</title>
   <subtitle>Fokus, Keep Learning, and Share</subtitle>
-  <updated>2023-12-01T13:45:45+07:00</updated>
+  <updated>2023-11-24T14:12:36+07:00</updated>
   <author>
     <name>iqbalasaleh</name>
     <uri>http://localhost:4000/</uri>
@@ -20,57 +20,11 @@
 
   
   <entry>
-    <title>Website koperasirizkyabadi.id</title>
-    <link href="http://localhost:4000/posts/website-koperasi-rizky-abadi/" rel="alternate" type="text/html" title="Website koperasirizkyabadi.id" />
-    <published>2019-10-06T13:00:00+07:00</published>
-  
-    <updated>2019-10-06T13:00:00+07:00</updated>
-  
-    <id>http://localhost:4000/posts/website-koperasi-rizky-abadi/</id>
-    <content src="http://localhost:4000/posts/website-koperasi-rizky-abadi/" />
-    <author>
-      <name>iqbalasaleh</name>
-    </author>
-
-  
-    
-    <category term="Experience" />
-    
-    <category term="Blog" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Tahun 2019
-
-koperasirizkyabadi.id
-Berikut adalah website yang saya bangun menggunakan CMS Wordpress, website ini adalah web company profile Koperasi simpan pinjam.
-
-Link
-Follow The Link : Kunjungi Situs
-
-Screenshot
-
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
     <title>Augmented Reality Gerakan Shalat Untuk Anak</title>
     <link href="http://localhost:4000/posts/augmented-reality-gerakan-shalat-untuk-anak/" rel="alternate" type="text/html" title="Augmented Reality Gerakan Shalat Untuk Anak" />
     <published>2019-09-30T13:00:00+07:00</published>
   
-    <updated>2023-12-01T13:35:57+07:00</updated>
+    <updated>2019-09-30T13:00:00+07:00</updated>
   
     <id>http://localhost:4000/posts/augmented-reality-gerakan-shalat-untuk-anak/</id>
     <content src="http://localhost:4000/posts/augmented-reality-gerakan-shalat-untuk-anak/" />
@@ -110,14 +64,14 @@ Vuforia merupakan library yang dapat digunakan untuk mobile platform seper...
 
   
   <entry>
-    <title>Website dewoitsolution.com</title>
-    <link href="http://localhost:4000/posts/website-dewoitsolution/" rel="alternate" type="text/html" title="Website dewoitsolution.com" />
-    <published>2018-02-26T13:00:00+07:00</published>
+    <title>Pengajar Komputer Bimbel KSS</title>
+    <link href="http://localhost:4000/posts/pengajar-bimbel-komputer/" rel="alternate" type="text/html" title="Pengajar Komputer Bimbel KSS" />
+    <published>2010-02-01T13:00:00+07:00</published>
   
-    <updated>2018-02-26T13:00:00+07:00</updated>
+    <updated>2023-11-23T16:09:01+07:00</updated>
   
-    <id>http://localhost:4000/posts/website-dewoitsolution/</id>
-    <content src="http://localhost:4000/posts/website-dewoitsolution/" />
+    <id>http://localhost:4000/posts/pengajar-bimbel-komputer/</id>
+    <content src="http://localhost:4000/posts/pengajar-bimbel-komputer/" />
     <author>
       <name>iqbalasaleh</name>
     </author>
@@ -125,8 +79,6 @@ Vuforia merupakan library yang dapat digunakan untuk mobile platform seper...
   
     
     <category term="Experience" />
-    
-    <category term="Blog" />
     
   
 
@@ -138,107 +90,11 @@ Vuforia merupakan library yang dapat digunakan untuk mobile platform seper...
 
 
 
-      Tahun 2018
+      Tahun 2010
 
-dewoitsolution.com
-Berikut adalah website yang saya bangun menggunakan CMS Wordpress, website ini adalah web company profile yang menawarkan produk jasa penyewaan hardware untuk kebutuhan bisnis, pribadi, dan event.
-
-Link
-Follow The Link : Kunjungi Situs
-
-Screenshot
+Saya Bekerja sebagai Pengajar Komputer di bimbingan belajar KSS(Kelompok Study Sarjana)
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Website jamuju.com</title>
-    <link href="http://localhost:4000/posts/website-jamuju/" rel="alternate" type="text/html" title="Website jamuju.com" />
-    <published>2015-07-24T13:00:00+07:00</published>
-  
-    <updated>2015-07-24T13:00:00+07:00</updated>
-  
-    <id>http://localhost:4000/posts/website-jamuju/</id>
-    <content src="http://localhost:4000/posts/website-jamuju/" />
-    <author>
-      <name>iqbalasaleh</name>
-    </author>
-
-  
-    
-    <category term="Experience" />
-    
-    <category term="Blog" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Tahun 2015
-
-jamuju.com
-Berikut adalah website yang saya bangun menggunakan CMS Wordpress, website ini adalah web company profile Jasa Perjalanan Wisata.
-
-Link
-Follow The Link : Kunjungi Situs
-
-Screenshot
-
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Website btp.ac.id</title>
-    <link href="http://localhost:4000/posts/website-btp/" rel="alternate" type="text/html" title="Website btp.ac.id" />
-    <published>2014-07-21T13:00:00+07:00</published>
-  
-    <updated>2014-07-21T13:00:00+07:00</updated>
-  
-    <id>http://localhost:4000/posts/website-btp/</id>
-    <content src="http://localhost:4000/posts/website-btp/" />
-    <author>
-      <name>iqbalasaleh</name>
-    </author>
-
-  
-    
-    <category term="Experience" />
-    
-    <category term="Blog" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Tahun 2014
-
-btp.ac.id
-Berikut adalah website yang saya bangun menggunakan CMS Wordpress, website ini adalah web company profile kampus yang berfokus pada bidang pariwisata, food and beverage.
-
-Link
-Follow The Link : Kunjungi Situs
-
-Screenshot
 
 
     </summary>
