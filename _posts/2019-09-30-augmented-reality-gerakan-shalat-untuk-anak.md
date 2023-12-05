@@ -3,8 +3,8 @@ title: Augmented Reality Gerakan Shalat Untuk Anak
 author: iqbalasaleh
 date: 2019-09-30 14:00:00 +0800
 categories: [Experience,Blog]
-tags: [<span style="color:#570303;">●</span>Augmented Reality, <span style="color:#FA9B48;">●</span>Mobile Apps]
-pin: true
+tags: [<span style="color:#570303;">●</span> Augmented Reality, <span style="color:#FA9B48;">●</span> Mobile Apps]
+pin: false
 math: true
 mermaid: true
 render_with_liquid: false
